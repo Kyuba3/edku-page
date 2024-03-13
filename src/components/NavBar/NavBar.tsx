@@ -32,11 +32,7 @@ const Navbar = () => {
         MADET
       </NavLink>
       <button className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-        {isOpen ? (
-          <>X</>
-        ) : (
-          <>☰</>
-        )}
+        <span></span>
       </button>
       <div className={`nav-links ${isOpen ? 'open' : ''}`}>
         <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>

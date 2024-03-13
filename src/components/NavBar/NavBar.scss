@@ -51,6 +51,7 @@
 @media (max-width: 768px) {
   .navbar {
     position: relative;
+    z-index: 10;
     &.open {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
@@ -70,7 +71,7 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     transform: translateY(-100%);
-    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in-out;
 
   }
 
@@ -80,7 +81,56 @@
   }
 
   .menu-icon {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      transition: transform 0.3s ease;
+    }
+  
+    &:before {
+      transform: translateY(-8px);
+    }
+    
+    &:after {
+      transform: translateY(8px);
+    }
+  
+    &.open:before {
+      transform: rotate(45deg);
+    }
+  
+    &.open:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .menu-icon > span {
     display: block;
+    position: absolute;
+    background-color: white;
+    height: 2px;
+    width: 100%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+  }
+  
+  .menu-icon.open > span {
+    opacity: 0;
   }
 
   .nav-link {
@@ -88,6 +138,7 @@
     padding: 15px;
     background-color: transparent;
     transition: background-color 0.3s;
+    border-bottom: 1px solid #555;
     
     &.active {
       background-color: none;

@@ -1,5 +1,4 @@
 .carousel {
-  width: 100%;
   overflow: hidden;
   position: relative;
 
@@ -31,11 +30,11 @@
   }
 
   .slide {
-    width: 100vw;
     margin-top: -20px;
-    max-height: 890px;
+    height: 750px;
+    width: 100%;
     display: none;
-    object-fit: fill;
+    object-fit: cover;
 
     &.active {
       display: block;

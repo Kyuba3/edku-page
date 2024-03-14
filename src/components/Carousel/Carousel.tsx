@@ -40,13 +40,13 @@ const Carousel = ({ images }: any) => {
         </div>
       }
       <button onClick={goToPrevious} className="arrow left-arrow">&#9664;</button>
-      <div className="carousel-slides">
+      <div className="carousel-slides ">
         {images.map((image: string, index: number) => (
           <img
             key={image}
             src={image}
             alt={`Slide ${index}`}
-            className={`slide ${index === currentIndex ? 'active' : ''}`}
+            className={`slide ${index === currentIndex ? 'active' : ''} `}
           />
         ))}
       </div>

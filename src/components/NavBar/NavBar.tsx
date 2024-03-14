@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import './NavBar.scss';
+import { useScroll } from '../../components/ScrollContext/ScrollContext';
 
 const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const { scrollToSection } = useScroll(); 
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,8 +28,18 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  const handleContactClick = () => {
+    navigate('/?scrollTo=contact')
+    scrollToSection('contact');
+  }
+
+  const handleAboutClick = () => {
+    navigate('/?scrollTo=about');
+    scrollToSection('about');
+  }
+
   return (
-    <nav className={`navbar ${isOpen ? 'open' : ''}`}>
+    <nav className={`navbar ${isOpen ? 'open' : ''} max-w-7xl mx-auto`}>
       <NavLink to="/" className="logo-link" onClick={closeNavbar}> 
         <img 
           src="https://www.creativefabrica.com/wp-content/uploads/2021/03/20/Mountain-logo-Design-Graphics-9785421-1-1-580x435.png" 
@@ -42,12 +55,12 @@ const Navbar = () => {
         <NavLink to="/"  onClick={closeNavbar} className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
           Home
         </NavLink>
-        <NavLink to="/about" onClick={closeNavbar} className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+        <button onClick={handleAboutClick} className='nav-link'>
           About
-        </NavLink>
-        <NavLink to="/contact" onClick={closeNavbar} className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+        </button>
+        <button  onClick={handleContactClick} className='nav-link'>
           Contact
-        </NavLink>
+        </button>
         <NavLink to="/products" onClick={closeNavbar} className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
           Products
         </NavLink>

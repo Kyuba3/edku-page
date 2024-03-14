@@ -1,8 +1,12 @@
 import React from "react";
-import styles from "./Home.module.scss";
+import  "./Home.scss";
 import Carousel from "../../components/Carousel/Carousel.tsx";
+import Contact from "../Contact/Contact.tsx";
+import { useScroll } from '../../components/ScrollContext/ScrollContext';
+import About from "../About/About.tsx";
 
 const Home = () => {
+  const { sectionRefs } = useScroll();
 
   const images: string[] = [
     "https://www.fiamma.it/wp-content/uploads/2022/09/home-segnaposto-header-video.jpg",
@@ -14,8 +18,10 @@ const Home = () => {
   ];
 
   return (
-    <div className={styles.mainContainer}>
+    <div className='main-container'>
       <Carousel images={images} />
+      <div ref={sectionRefs.about}><About /></div>
+      <div ref={sectionRefs.contact}><Contact /></div>
     </div>
   )
 }

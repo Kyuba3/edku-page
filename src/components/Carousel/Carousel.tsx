@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Carousel.scss'; // Make sure to create a corresponding SCSS file for styles
 
-const Carousel = ({ images }) => {
+const Carousel = ({ images }: any) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isImageLoading, setIsImageLoading] = useState<boolean>(true);
 
@@ -31,7 +31,7 @@ const Carousel = ({ images }) => {
   }, [currentIndex, images.length]);
 
   return (
-    <div className="carousel">
+    <div className="carousel max-w-7xl mx-auto">
       {isImageLoading && 
         <div className="loader">
           <svg viewBox='0 0 100 100'>
@@ -41,7 +41,7 @@ const Carousel = ({ images }) => {
       }
       <button onClick={goToPrevious} className="arrow left-arrow">&#9664;</button>
       <div className="carousel-slides">
-        {images.map((image, index) => (
+        {images.map((image: string, index: number) => (
           <img
             key={image}
             src={image}

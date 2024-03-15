@@ -1,0 +1,49 @@
+.articlesList {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  padding-bottom: 40px;
+
+  .article {
+    flex: 1 1 calc(33.333% - 2rem);
+    max-width: 410px;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    .title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin: 1rem;
+    }
+
+    .content {
+      font-size: 1rem;
+      margin: 0 1rem 1rem;
+      flex-grow: 1;
+    }
+
+    a {
+      align-self: center;
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
+      background-color: #4f46e5;
+      color: white;
+      border-radius: 0.25rem;
+      text-decoration: none;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #4338ca;
+      }
+    }
+  }
+}

@@ -31,7 +31,7 @@ const Carousel = ({ images }: any) => {
   }, [currentIndex, images.length]);
 
   return (
-    <div className="carousel max-w-7xl mx-auto">
+    <div className="carousel max-w-8xl mx-auto">
       {isImageLoading && 
         <div className="loader">
           <svg viewBox='0 0 100 100'>
@@ -46,7 +46,7 @@ const Carousel = ({ images }: any) => {
             key={image}
             src={image}
             alt={`Slide ${index}`}
-            className={`slide ${index === currentIndex ? 'active' : ''} `}
+            className={`slide rounded-lg ${index === currentIndex ? 'active' : ''} `}
           />
         ))}
       </div>

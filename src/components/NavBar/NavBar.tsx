@@ -39,7 +39,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className={`navbar ${isOpen ? 'open' : ''} fixed top-0 left-0 right-0 z-50 shadow-md`}>
+    <nav className={`navbar ${isOpen ? 'open' : ''} mx-auto fixed top-0 left-0 right-0 z-50 shadow-md`}>
       <NavLink to="/" className="logo-link" onClick={closeNavbar}> 
         <img 
           src="https://www.creativefabrica.com/wp-content/uploads/2021/03/20/Mountain-logo-Design-Graphics-9785421-1-1-580x435.png" 
@@ -63,6 +63,9 @@ const Navbar = () => {
         </button>
         <NavLink to="/products" onClick={closeNavbar} className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
           Products
+        </NavLink>
+        <NavLink to="/articles" onClick={closeNavbar} className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+          Articles 
         </NavLink>
       </div>
     </nav>

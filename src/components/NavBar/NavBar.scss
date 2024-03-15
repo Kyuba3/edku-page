@@ -16,10 +16,9 @@
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  background-color: #333;
+  background-color: #404040;
+  opacity: 0.9;
   padding: 10px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
 }
 
 .nav-links {
@@ -55,8 +54,11 @@
     position: relative;
     z-index: 10;
     border-radius: 0;
+    width: 100vw;
+    margin-top: 0;
     &.open {
       border-radius: 0;
+      opacity: 1;
     }
   }
     

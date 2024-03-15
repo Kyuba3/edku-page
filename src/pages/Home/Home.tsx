@@ -4,6 +4,8 @@ import Carousel from "../../components/Carousel/Carousel.tsx";
 import Contact from "../Contact/Contact.tsx";
 import { useScroll } from '../../components/ScrollContext/ScrollContext';
 import About from "../About/About.tsx";
+import ArticlesList from "../Articles/ArticleList/ArticleList.tsx";
+import AddArticle from "../../components/AddArticle/AddArticle.tsx";
 
 const Home = () => {
   const { sectionRefs } = useScroll();
@@ -21,6 +23,8 @@ const Home = () => {
     <div className='main-container'>
       <Carousel images={images} />
       <div ref={sectionRefs.about}><About /></div>
+      <ArticlesList limit={3}/>
+      <AddArticle />
       <div ref={sectionRefs.contact}><Contact /></div>
     </div>
   )

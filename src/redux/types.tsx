@@ -2,6 +2,7 @@ export interface Article {
   id?: string;
   title: string;
   content: string;
+  secretKey?: string;
 }
 
 export interface ArticlesState {

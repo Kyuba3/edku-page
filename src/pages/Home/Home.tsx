@@ -20,7 +20,7 @@ const Home = () => {
   ];
 
   return (
-    <div className='main-container'>
+    <div className='main-container' ref={sectionRefs.home}>
       <Carousel images={images} />
       <div ref={sectionRefs.about}><About /></div>
       <ArticlesList limit={3}/>

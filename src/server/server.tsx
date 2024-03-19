@@ -24,14 +24,15 @@ const articles: Article[] = [];
 const products: Product[] = [];
 
 app.post('/api/articles', (req: Request, res: Response) => {
-  const { secretKey, title, content } = req.body;
-  if (secretKey === "YOUR_SECRET_KEY") {
+  const { title, content } = req.body;
+  
     const newArticle: Article = { id: (articles.length + 1).toString(), title, content };
     articles.push(newArticle);
     res.status(201).send({ message: "Article added successfully" });
-  } else {
-    res.status(403).send({ message: "Forbidden" });
-  }
+    
+    if (!res.status(201)) {
+      res.status(403).send({ message: "Forbidden" });
+    }
 });
 
 app.post('/api/products', (req: Request, res: Response) => {

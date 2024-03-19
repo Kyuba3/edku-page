@@ -17,6 +17,7 @@ export const ScrollProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const sectionRefs: SectionRefs = {
     contact: useRef<HTMLDivElement>(null),
     about: useRef<HTMLDivElement>(null),
+    home: useRef<HTMLDivElement>(null),
     // Add more sections as needed
   };
 

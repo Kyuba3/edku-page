@@ -37,9 +37,11 @@ const ArticlesList: React.FC<ArticlesListProps> = ({ limit }) => {
         {articles.slice(0, limit || articles.length).map((article : Article) => (
           <article key={article.id} className="article bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300 ease-in-out">
             <h3 className="title text-xl font-semibold m-4">{article.title}</h3>
-            <p className="content text-gray-600 flex-grow m-4">{article.content.substring(0, 100)}...</p>
-            <Link to={`/article/${article.id}`} className="block text-center w-full py-2 bg-blue-500 text-white rounded-b-lg hover:bg-blue-700 transition-colors duration-300">Czytaj więcej</Link>
-            <button onClick={() => handleDelete(article.id)} className="block text-center w-full py-2 bg-blue-500 text-white rounded-b-lg hover:bg-blue-700 transition-colors duration-300">Usuń artykuł</button>
+            <p className="content text-gray-600 flex-grow m-4">
+              {article.content ? article.content.substring(0, 100) : 'Brak treści'}...
+            </p>
+            <Link to={`/article/${article.id}`} className="block text-center w-full py-2 bg-blue-500 text-white rounded-b-lg hover:bg-blue-700 transition-colors duration-300 read-more">Czytaj więcej</Link>
+            <button onClick={() => handleDelete(article.id)} className="block text-center w-full py-2 bg-blue-500 text-white rounded-b-lg hover:bg-blue-700 transition-colors duration-300 delete-button">Usuń artykuł</button>
           </article>
         ))}
       </div>

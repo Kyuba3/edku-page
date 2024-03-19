@@ -31,16 +31,24 @@ const Navbar = () => {
   const handleContactClick = () => {
     navigate('/?scrollTo=contact')
     scrollToSection('contact');
+    closeNavbar();
   }
 
   const handleAboutClick = () => {
     navigate('/?scrollTo=about');
     scrollToSection('about');
+    closeNavbar();
+  }
+
+  const handleHomeClick = () => {
+    navigate('/?scrollTo=home');
+    scrollToSection('home');
+    closeNavbar();
   }
 
   return (
     <nav className={`navbar ${isOpen ? 'open' : ''} mx-auto fixed top-0 left-0 right-0 z-50 shadow-md`}>
-      <NavLink to="/" className="logo-link" onClick={closeNavbar}> 
+      <NavLink to="/" className="logo-link" onClick={handleHomeClick}> 
         <img 
           src="https://www.creativefabrica.com/wp-content/uploads/2021/03/20/Mountain-logo-Design-Graphics-9785421-1-1-580x435.png" 
           alt="LOGO" 
@@ -52,7 +60,7 @@ const Navbar = () => {
         <span></span>
       </button>
       <div className={`nav-links ${isOpen ? 'open' : ''}`}>
-        <NavLink to="/"  onClick={closeNavbar} className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+        <NavLink to="/"  onClick={handleHomeClick} className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
           Home
         </NavLink>
         <button onClick={handleAboutClick} className='nav-link'>

@@ -1,5 +1,4 @@
 import {
-  Article,
   ArticleActionTypes,
   FETCH_ARTICLES_BEGIN,
   FETCH_ARTICLES_SUCCESS,
@@ -8,14 +7,15 @@ import {
   ADD_ARTICLE_FAILURE,
 } from '../types';
 
-import { Dispatch } from 'redux';
 import { ThunkAction, ThunkDispatch } from 'redux-thunk';
 import { AppState } from '../store';
+
+const BASE_URL = 'http://localhost:3001/api';
 
 export const fetchArticles = (): ThunkAction<void, AppState, null, ArticleActionTypes> => {
   return (dispatch: ThunkDispatch<AppState, null, ArticleActionTypes>) => {
     dispatch({ type: FETCH_ARTICLES_BEGIN });
-    fetch('http://localhost:4000/api/articles')
+    fetch(`${BASE_URL}/articles`)
       .then(res => res.json())
       .then(data =>
         dispatch({ type: FETCH_ARTICLES_SUCCESS, payload: data })
@@ -29,7 +29,7 @@ export const fetchArticles = (): ThunkAction<void, AppState, null, ArticleAction
 export const fetchArticleById = (id: string): ThunkAction<void, AppState, null, ArticleActionTypes> => {
   return async (dispatch: ThunkDispatch<AppState, null, ArticleActionTypes>) => {
     dispatch({ type: FETCH_ARTICLES_BEGIN });
-    fetch(`http://localhost:4000/api/articles/${id}`)
+    fetch(`${BASE_URL}/articles/${id}`)
       .then(res => {
         if (!res.ok) {
           throw new Error('Network response was not ok');
@@ -37,7 +37,7 @@ export const fetchArticleById = (id: string): ThunkAction<void, AppState, null, 
         return res.json();
       })
       .then(article =>
-        dispatch({ type: FETCH_ARTICLES_SUCCESS, payload: [article] }) // Payload jest tablicą, aby zachować spójność z istniejącą strukturą danych
+        dispatch({ type: FETCH_ARTICLES_SUCCESS, payload: [article] })
       )
       .catch(error =>
         dispatch({ type: FETCH_ARTICLES_FAILURE, payload: error })
@@ -47,12 +47,12 @@ export const fetchArticleById = (id: string): ThunkAction<void, AppState, null, 
 
 
 export const addArticle = (articleData: any) => (dispatch: any) => {
-  return fetch('http://localhost:4000/api/articles', {
+  return fetch(`${BASE_URL}/articles`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ ...articleData, secretKey: 'YOUR_SECRET_KEY' })
+    body: JSON.stringify(articleData)
   })
   .then(response => {
     if (!response.ok) {
@@ -71,7 +71,7 @@ export const addArticle = (articleData: any) => (dispatch: any) => {
 
 export const deleteArticle = (id: string): ThunkAction<Promise<void>, AppState, null, ArticleActionTypes> => {
   return (dispatch: ThunkDispatch<AppState, null, ArticleActionTypes>) => {
-    return fetch(`http://localhost:4000/api/articles/${id}`, {
+    return fetch(`${BASE_URL}/articles/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -81,8 +81,8 @@ export const deleteArticle = (id: string): ThunkAction<Promise<void>, AppState, 
       if (!res.ok) {
         throw new Error('Failed to delete the article');
       }
-      dispatch({ type: FETCH_ARTICLES_BEGIN }); // Ponownie ładujemy listę artykułów, lub możesz zdefiniować nowy typ akcji
-      return fetch('http://localhost:4000/api/articles');
+      dispatch({ type: FETCH_ARTICLES_BEGIN });
+      return fetch(`${BASE_URL}/articles`);
     })
     .then(res => {
       if (!res.ok) {
@@ -91,15 +91,12 @@ export const deleteArticle = (id: string): ThunkAction<Promise<void>, AppState, 
       return res.json();
     })
     .then(data => {
-      // Pomyślnie załadowano aktualizowaną listę artykułów
       dispatch({ type: FETCH_ARTICLES_SUCCESS, payload: data });
     })
     .catch(error => {
-      // Obsługa błędów zarówno dla usuwania, jak i ponownego ładowania artykułów
       dispatch({ type: FETCH_ARTICLES_FAILURE, payload: error });
     })
     .then(() => {
-      // Zapewnia, że zwracamy Promise<void>, zwracając explicite 'undefined'
       return undefined;
     });
   };

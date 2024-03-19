@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { useAppDispatch } from '../../redux/hooks/useAppDispatch';
-import { addArticle, fetchArticles } from '../../redux/actions/ArticlesActions';
+import { addArticle } from '../../redux/actions/ArticlesActions';
 
 
 const AddArticle: React.FC = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [id, setId] = useState(0);
   const dispatch = useAppDispatch();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Użyj akcji Redux Thunk do dodania artykułu
-    dispatch(addArticle({ title, content }))
+    dispatch(addArticle({ id, title, content }))
       .then(() => {
-        // Opcjonalnie: jakieś działania po pomyślnym dodaniu, np. wyświetlenie komunikatu
+        setId(0);
         setTitle('');
         setContent('');
       })
@@ -25,6 +25,13 @@ const AddArticle: React.FC = () => {
   return (
     <div className="max-w-md mx-auto mt-10">
       <form onSubmit={handleSubmit} className="flex flex-col">
+        <input
+          type="number"
+          placeholder='id artykułu'
+          value={id}
+          onChange={e => setId(id)}
+          className='mb-4 p-2 border rounded'
+        />
         <input
           type="text"
           placeholder="Tytuł artykułu"

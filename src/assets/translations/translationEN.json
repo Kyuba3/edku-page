@@ -1,0 +1,25 @@
+{
+  "navbar": {
+    "header": "MADET",
+    "home": "Home",
+    "about": "About us",
+    "contact": "Contact",
+    "products": "Our products",
+    "blog": "Blog"
+  },
+
+  "contact": {
+    "questions": "Do you have any questions? <br>Contact us!",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send_button": "Send"
+  },
+
+  "about": {
+    "header": "About Us",
+    "description": "We are a passionate team dedicated to providing the best possible service to our clients. We bring creative, technical, and strategic expertise to every project we undertake. Our mission is to make meaningful impacts in our field and to be at the forefront of innovation. With years of experience under our belt, we're proud to have a track record of satisfied clients and successful projects."
+  }
+
+  
+}

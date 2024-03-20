@@ -1,0 +1,23 @@
+{
+  "navbar": {
+    "header": "MADET",
+    "home": "Strona główna",
+    "about": "O nas",
+    "contact": "Kontakt",
+    "products": "Nasze Produkty",
+    "blog": "Blog"
+  },
+
+  "contact": {
+    "questions": "Masz jakieś pytania? <br>Skontaktuj się z nami",
+    "name": "Imię",
+    "email": "Email",
+    "message": "Wiadomość",
+    "send_button": "Wyślij"
+  },
+
+  "about": {
+    "header": "O nas",
+    "description": "Jesteśmy zespołem pełnym pasji, którego celem jest zapewnienie jak najlepszej obsługi naszym klientom. Do każdego realizowanego przez nas projektu wnosimy wiedzę kreatywną, techniczną i strategiczną. Naszą misją jest wywieranie znaczącego wpływu w naszej branży i bycie w czołówce innowacji. Dzięki wieloletniemu doświadczeniu jesteśmy dumni z historii zadowolonych klientów i udanych projektów."
+  }
+}

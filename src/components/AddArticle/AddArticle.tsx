@@ -6,14 +6,12 @@ import { addArticle } from '../../redux/actions/ArticlesActions';
 const AddArticle: React.FC = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [id, setId] = useState(0);
   const dispatch = useAppDispatch();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    dispatch(addArticle({ id, title, content }))
+    dispatch(addArticle({ title, content }))
       .then(() => {
-        setId(0);
         setTitle('');
         setContent('');
       })
@@ -25,13 +23,6 @@ const AddArticle: React.FC = () => {
   return (
     <div className="max-w-md mx-auto mt-10">
       <form onSubmit={handleSubmit} className="flex flex-col">
-        <input
-          type="number"
-          placeholder='id artykułu'
-          value={id}
-          onChange={e => setId(id)}
-          className='mb-4 p-2 border rounded'
-        />
         <input
           type="text"
           placeholder="Tytuł artykułu"

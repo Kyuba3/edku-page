@@ -10,7 +10,8 @@ import {
 import { ThunkAction, ThunkDispatch } from 'redux-thunk';
 import { AppState } from '../store';
 
-const BASE_URL = 'http://localhost:3001/api';
+const BASE_URL = process.env.REACT_APP_API_URL;
+console.log(BASE_URL);
 
 export const fetchArticles = (): ThunkAction<void, AppState, null, ArticleActionTypes> => {
   return (dispatch: ThunkDispatch<AppState, null, ArticleActionTypes>) => {

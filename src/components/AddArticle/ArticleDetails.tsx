@@ -10,11 +10,11 @@ const ArticleDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
 
-  const article = useSelector((state: AppState) => state.articles.articles.find((a : any) => a.id === parseInt(id as string)));
+  const article = useSelector((state: AppState) => state.articles.articles.find((a : any) => a.id === id));
 
   useEffect(() => {
     if (id) {
-      dispatch(fetchArticleById(id as string));
+      dispatch(fetchArticleById(id));
     }
   }, [id, dispatch]);
 

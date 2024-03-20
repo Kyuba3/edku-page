@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import './NavBar.scss';
 import { useScroll } from '../../components/ScrollContext/ScrollContext';
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 
 const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const { scrollToSection } = useScroll(); 
+  const { t } = useTranslation(['translations']);
 
   useEffect(() => {
     const handleResize = () => {
@@ -54,27 +57,28 @@ const Navbar = () => {
           alt="LOGO" 
           className="logo">
         </img>
-        MADET
+        {t('navbar.header')}
       </NavLink>
       <button className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <span></span>
       </button>
       <div className={`nav-links ${isOpen ? 'open' : ''}`}>
         <NavLink to="/"  onClick={handleHomeClick} className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-          Home
+          {t('navbar.home')}
         </NavLink>
         <button onClick={handleAboutClick} className='nav-link'>
-          About
+          {t('navbar.about')}
         </button>
         <button  onClick={handleContactClick} className='nav-link'>
-          Contact
+          {t('navbar.contact')}
         </button>
         <NavLink to="/products" onClick={closeNavbar} className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-          Products
+          {t('navbar.products')}
         </NavLink>
         <NavLink to="/articles" onClick={closeNavbar} className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-          Articles 
+          {t('navbar.blog')} 
         </NavLink>
+        <LanguageSwitcher />
       </div>
     </nav>
   );

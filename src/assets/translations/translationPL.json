@@ -5,7 +5,8 @@
     "about": "O nas",
     "contact": "Kontakt",
     "products": "Nasze Produkty",
-    "blog": "Blog"
+    "blog": "Blog",
+    "searchPlaceholder": "Czego szukasz?"
   },
 
   "contact": {

@@ -24,7 +24,17 @@ export const ScrollProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const location = useLocation();
 
   const scrollToSection = (sectionKey: string) => {
-    sectionRefs[sectionKey]?.current?.scrollIntoView({ behavior: 'smooth' });
+    const section = sectionRefs[sectionKey]?.current;
+    if (section) {
+      const sectionTop = section.getBoundingClientRect().top;
+      const navbarHeight = 130;
+      const offsetPosition = sectionTop + window.pageYOffset - navbarHeight;
+  
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   // Automatically scroll to section based on URL query parameter

@@ -51,17 +51,17 @@
   
   .loader {
     position: absolute;
-    top: 95%;
-    left: 95%;
+    top: 96.5%;
+    left: 54%;
     transform: translate(-50%, -50%);
-    width: 70px;
-    height: 70px;
-    z-index: 1;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
     
     circle {
       fill: none;
-      stroke: rgb(255, 255, 255);
-      stroke-width: 4;
+      stroke: #242b52;
+      stroke-width: 5;
       stroke-dasharray: 440;
       stroke-dashoffset: 440;
       animation: fill 9.5s linear forwards; 
@@ -74,6 +74,7 @@
   .arrow {
     padding: 5px;
     font-size: 18px;
+    top: -59%;
   }
 
   .carousel-slides {
@@ -92,10 +93,30 @@
 
   .carousel {
     .loader {
-      width: 50px;
-      height: 50px;
-      top: 90%;
-      left: 93%;
+      width: 30px;
+      height: 30px;
+      top: 91%;
+      left: 67%;
     } 
   }
 }
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    .indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: grey;
+      margin: 0 5px;
+      transition: background-color 0.3s;
+      
+      &.active {
+        background-color: blue; // Zmień na preferowany kolor aktywnego wskaźnika
+      }
+    }
+  }

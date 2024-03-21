@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <ScrollProvider>
-      <div style={{ paddingTop: '70px'}} className='flex flex-col min-h-screen'>
+      <div className='flex flex-col min-h-screen navbar-container'>
         <Header />
         <main className='flex-grow'>
           <Routes>

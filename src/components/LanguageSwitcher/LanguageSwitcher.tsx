@@ -16,7 +16,7 @@ const LanguageSwitcher = () => {
   return (
     <div className="language-switcher">
       <div className="current-language">
-        <FlagIcon code={i18n.language === 'pl' ? 'pl' : 'gb'} /> <MdOutlineKeyboardArrowDown color="white" />
+        <FlagIcon code={i18n.language === 'pl' ? 'pl' : 'gb'} /> <MdOutlineKeyboardArrowDown size="25" color="#242b52" />
       </div>
       <select onChange={changeLanguage} value={i18n.language}>
         <option value="en">English</option>

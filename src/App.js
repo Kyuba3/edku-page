@@ -9,6 +9,7 @@ import Products from './pages/Products/Products.tsx';
 import SingleProductDetail from './pages/Products/SingleProductDetails.tsx';
 import ArticleDetails from './components/AddArticle/ArticleDetails.tsx';
 import ArticlesList from './pages/Articles/ArticleList/ArticleList.tsx';
+import SearchResults from './components/SearchResults/SearchResults.tsx';
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
             <Route path='/products/:productId' element={<SingleProductDetail />} />
             <Route path='/articles' element={<ArticlesList />} />
             <Route path='/article/:id' element={<ArticleDetails />} />
+            <Route path='/search' element={<SearchResults />} />
           </Routes>
         </main>
         <Footer />

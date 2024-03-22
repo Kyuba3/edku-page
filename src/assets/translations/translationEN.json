@@ -19,6 +19,15 @@
   "about": {
     "header": "About Us",
     "description": "We are a passionate team dedicated to providing the best possible service to our clients. We bring creative, technical, and strategic expertise to every project we undertake. Our mission is to make meaningful impacts in our field and to be at the forefront of innovation. With years of experience under our belt, we're proud to have a track record of satisfied clients and successful projects."
+  },
+
+  "articles": {
+    "header": "News",
+    "read_more_button": "Read more",
+    "delete_article_button": "Delete article",
+    "add_article_button": "Add article",
+    "title_placeholder": "Title",
+    "content_placeholder": "Content"
   }
 
   

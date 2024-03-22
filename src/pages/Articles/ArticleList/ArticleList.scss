@@ -1,3 +1,10 @@
+.article-dot-icon {
+  color:  rgb(76, 134, 76);
+  display: flex;
+  width: 100%;
+}
+
+
 .articlesList {
   display: flex;
   justify-content: center;
@@ -31,19 +38,25 @@
       flex-grow: 1;
     }
 
-    a {
-      align-self: center;
-      margin: 1rem 0;
-      padding: 0.5rem 1rem;
-      background-color: #4f46e5;
+    .read-more {
       color: white;
-      border-radius: 0.25rem;
-      text-decoration: none;
-      transition: background-color 0.2s;
+      align-self: center;
+      width: 220px;
+      display: flex;
+      justify-content: center;
+      font-weight: 500;
+      background-color: #f26629;
+    }
 
-      &:hover {
-        background-color: #4338ca;
-      }
+    .delete-button {
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      width: 220px;
+      font-weight: 500;
+      background-color: #ff0000;
+      
     }
   }
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Carousel.scss'; // Make sure to create a corresponding SCSS file for styles
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 const Carousel = ({ images }: any) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -33,7 +34,7 @@ const Carousel = ({ images }: any) => {
 
   return (
     <div className="carousel max-w-8xl mx-auto">
-      <button onClick={goToPrevious} className="arrow left-arrow">&#9664;</button>
+      <button onClick={goToPrevious} className="arrow left-arrow"><MdKeyboardArrowLeft size={25} /> </button>
       <div className="carousel-slides ">
         {images.map((image: string, index: number) => (
           <img
@@ -60,7 +61,7 @@ const Carousel = ({ images }: any) => {
           </div>
         }
       </div>
-      <button onClick={goToNext} className="arrow right-arrow">&#9654;</button>
+      <button onClick={goToNext} className="arrow right-arrow"><MdKeyboardArrowRight size={25} /></button>
     </div> 
   );
 };

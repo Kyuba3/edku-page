@@ -51,7 +51,7 @@
   
   .loader {
     position: absolute;
-    top: 96.5%;
+    top: 92.5%;
     left: 54%;
     transform: translate(-50%, -50%);
     width: 40px;
@@ -104,8 +104,8 @@
 .carousel-indicators {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: -30px;
+    margin-bottom: 50px;
     
     .indicator {
       width: 10px;

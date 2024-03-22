@@ -1,0 +1,33 @@
+.products-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel-content {
+  display: flex;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.carousel-item {
+  min-width: 25%; /* Dla 4 elementów na widok, dla 5 elementów użyj 20% */
+  padding: 0 10px; /* Mała przestrzeń między elementami */
+}
+
+.carousel-controls {
+  cursor: pointer;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-controls.left {
+  left: -30px; /* Możesz dostosować odległość */
+}
+
+.carousel-controls.right {
+  right: -30px; /* Możesz dostosować odległość */
+}

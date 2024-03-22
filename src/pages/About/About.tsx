@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { HiOutlineDotsHorizontal } from "react-icons/hi";
 
 const About = () => {
 
@@ -7,9 +8,10 @@ const About = () => {
 
   return (
     <div className="bg-white py-10 px-4 sm:px-6 lg:px-8">
+      <HiOutlineDotsHorizontal className="article-dot-icon" size={60} />
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-extrabold text-gray-800 sm:text-4xl">{t('about.header')}</h2>
-        <div className="mt-4 text-gray-600 text-lg">
+        <h2 className="text-3xl font-extrabold text-gray-800 sm:text-4xl text-center">{t('about.header')}</h2>
+        <div className="mt-4 text-center text-gray-600 text-lg">
           <p>
             {t('about.description')}
           </p>

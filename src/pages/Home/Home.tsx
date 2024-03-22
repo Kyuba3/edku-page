@@ -6,11 +6,12 @@ import { useScroll } from '../../components/ScrollContext/ScrollContext';
 import About from "../About/About.tsx";
 import ArticlesList from "../Articles/ArticleList/ArticleList.tsx";
 import AddArticle from "../../components/AddArticle/AddArticle.tsx";
+import ProductsAtHome from "../../components/ProductsAtHomePage/ProductsAtHomePage.tsx";
 
 const Home = () => {
   const { sectionRefs } = useScroll();
 
-  const images: string[] = [
+  const images: any = [
     "https://www.fiamma.it/wp-content/uploads/2022/09/home-segnaposto-header-video.jpg",
     "https://maronicamper.com/wp-content/uploads/2021/11/DSC8544_2-1.webp",
     "https://www.fiamma.it/wp-content/uploads/2022/09/home-segnaposto-header-video.jpg",
@@ -22,6 +23,7 @@ const Home = () => {
   return (
     <div className='main-container' ref={sectionRefs.home}>
       <Carousel images={images} />
+      <ProductsAtHome />
       <div ref={sectionRefs.about}><About /></div>
       <ArticlesList limit={3}/>
       <AddArticle />

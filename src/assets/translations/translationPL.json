@@ -9,6 +9,13 @@
     "searchPlaceholder": "Czego szukasz?"
   },
 
+  "header": {
+    "header": "<p>Wybierz swój</p> własny styl <p> podróżowania</p>",
+    "subheader": "<p>Przerabianie kamperów, pomoc w logistyce, kneepady,<br> dla Ciebie, Twojej firmy lub bliskich </p>",
+    "products_button": "Nasze produkty",
+    "contact_button": "Kontakt"
+  },
+
   "contact": {
     "questions": "Masz jakieś pytania? <br>Skontaktuj się z nami",
     "name": "Imię",

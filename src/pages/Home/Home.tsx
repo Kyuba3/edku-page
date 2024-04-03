@@ -7,6 +7,7 @@ import About from "../About/About.tsx";
 import ArticlesList from "../Articles/ArticleList/ArticleList.tsx";
 import AddArticle from "../../components/AddArticle/AddArticle.tsx";
 import ProductsAtHome from "../../components/ProductsAtHomePage/ProductsAtHomePage.tsx";
+import HeaderView from "../../components/Header/HeaderView.tsx";
 
 const Home = () => {
   const { sectionRefs } = useScroll();
@@ -22,7 +23,8 @@ const Home = () => {
 
   return (
     <div className='main-container' ref={sectionRefs.home}>
-      <Carousel images={images} />
+      {/* <Carousel images={images} /> */}
+      <HeaderView />
       <ProductsAtHome />
       <div ref={sectionRefs.about}><About /></div>
       <ArticlesList limit={3}/>

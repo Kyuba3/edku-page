@@ -8,6 +8,10 @@
     "blog": "Blog"
   },
 
+  "header": {
+    "header": "Choose your own style of traveling"
+  },
+
   "contact": {
     "questions": "Do you have any questions? <br>Contact us!",
     "name": "Name",
@@ -15,6 +19,7 @@
     "message": "Message",
     "send_button": "Send"
   },
+
 
   "about": {
     "header": "About Us",

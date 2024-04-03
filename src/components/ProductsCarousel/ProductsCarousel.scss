@@ -31,3 +31,25 @@
 .carousel-controls.right {
   right: -30px; /* Możesz dostosować odległość */
 }
+
+@media only screen and (max-width: 1024px) {
+  .carousel-item {
+    min-width: 50%; /* Adjust for 3 items in view on tablets */
+    max-height: 500px;
+  }
+
+  .carousel-controls.left,
+  .carousel-controls.right {
+    top: auto;
+    bottom: 10px; /* Position controls at the bottom for easier access */
+    transform: translateY(0);
+  }
+
+  .carousel-controls.left {
+    left: 10px; /* Adjust distance closer to the edge */
+  }
+
+  .carousel-controls.right {
+    right: 10px; /* Adjust distance closer to the edge */
+  }
+}

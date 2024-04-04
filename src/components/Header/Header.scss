@@ -77,6 +77,14 @@
   }
 }
 
+
+.icon {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  color:  #242b52;
+}
+
 @media only screen and (max-width: 1024px) {
   // Styles here will apply to screens smaller than 1024px and won't affect larger screens
   .header-container {

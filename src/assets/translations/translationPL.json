@@ -19,9 +19,13 @@
   "contact": {
     "questions": "Masz jakieś pytania? <br>Skontaktuj się z nami",
     "name": "Imię",
+    "surname": "Nazwisko",
+    "phone": "Numer telefonu",
     "email": "Email",
-    "message": "Wiadomość",
-    "send_button": "Wyślij"
+    "message": "W czym możemy Ci pomóc?",
+    "send_button": "Wyślij",
+    "title": "Kontakt",
+    "consent": "Wyrażam zgodę na przetwarzanie danych osobowych"
   },
 
   "about": {

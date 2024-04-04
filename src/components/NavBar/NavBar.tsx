@@ -35,12 +35,6 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
-  const handleContactClick = () => {
-    navigate('/?scrollTo=contact')
-    scrollToSection('contact');
-    closeNavbar();
-  }
-
   const handleAboutClick = () => {
     navigate('/?scrollTo=about');
     scrollToSection('about');
@@ -83,9 +77,9 @@ const Navbar = () => {
           <button onClick={handleAboutClick} className='nav-link'>
             {t('navbar.about')}
           </button>
-          <button  onClick={handleContactClick} className='nav-link'>
+          <NavLink  to="/contact" onClick={closeNavbar} className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
             {t('navbar.contact')}
-          </button>
+          </NavLink>
           <NavLink to="/products" onClick={closeNavbar} className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
             {t('navbar.products')}
           </NavLink>

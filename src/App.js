@@ -10,6 +10,7 @@ import SingleProductDetail from './pages/Products/SingleProductDetails.tsx';
 import ArticleDetails from './components/AddArticle/ArticleDetails.tsx';
 import ArticlesList from './pages/Articles/ArticleList/ArticleList.tsx';
 import SearchResults from './components/SearchResults/SearchResults.tsx';
+import ContactPage from './pages/Contact/ContactPage.tsx';
 
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
             <Route path='/articles' element={<ArticlesList />} />
             <Route path='/article/:id' element={<ArticleDetails />} />
             <Route path='/search' element={<SearchResults />} />
+            <Route path='/contact' element={<ContactPage />} />
           </Routes>
         </main>
         <Footer />

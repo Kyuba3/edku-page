@@ -15,9 +15,12 @@
   "contact": {
     "questions": "Do you have any questions? <br>Contact us!",
     "name": "Name",
+    "surname": "Surname",
+    "phone": "Phone number",
     "email": "Email",
     "message": "Message",
-    "send_button": "Send"
+    "send_button": "Send",
+    "title": "Contact"
   },
 
 

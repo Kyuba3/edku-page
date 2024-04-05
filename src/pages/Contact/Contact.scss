@@ -146,16 +146,53 @@
 }
 
 .backgroundImage {
-  background-image:url('https://files.oaiusercontent.com/file-JKjYb2veYh3fzwN2DMbqTndJ?se=2024-04-04T09%3A16%3A17Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3D60869e44-6621-440d-8388-da78551b0e6e.webp&sig=rBLMMghr/qvxzWUEFz4vcvmVYGvy760%2BWIspx/M5sqw%3D');
-  background-position: top;
+  background-image:url('https://files.oaiusercontent.com/file-GGVCn0fKtxVdf7cnO2Dg0ynp?se=2024-04-05T08%3A43%3A25Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3Da9aedbef-6148-4aa0-b0ff-e025ad6ad814.webp&sig=P4k1Wqi%2BdcBzvk8MBQ9alLYGL2dGH4UZGh63f1L%2BMJ4%3D');
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 600px;
-  margin: 20px 0;
+  height: 500px;
+  margin: 20px 0 1px 0;
 }
 
 .text-container {
-  margin-left: 400px;
-  margin-top: 200px;
+  margin-left: 300px;
+  margin-top: 150px;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column; /* Układaj form-group w kolumnie na małych ekranach */
+  }
+
+  .form-group {
+    flex-basis: 100%; /* Zmień na 100%, aby inputy zajmowały całą szerokość */
+  }
+
+  .text-container {
+    margin-left: 20px; /* Zmniejsz lewy margines */
+    text-align: center; /* Centruj tekst */
+  }
+
+  .backgroundImage {
+    height: auto; /* Zmień wysokość, aby była automatycznie dostosowana do zawartości */
+    padding: 50px 20px; /* Dodaj padding, aby tekst nie dotykał krawędzi */
+  }
+
+  .contact-page-form {
+    width: auto; /* Zmień szerokość formularza, aby automatycznie dopasowywał się do ekranu */
+  }
+  
+  .contact-form {
+    width: auto; /* Zmień szerokość formularza, aby automatycznie dopasowywał się do ekranu */
+  }
+
+  .contact-button {
+    margin-top: 20px; /* Zmień górny margines przycisku */
+    width: auto; /* Zmień szerokość przycisku, aby automatycznie dopasowywał się do ekranu */
+  }
+
+  .article-dot-icon, .contact-dots-icon {
+    justify-content: center; /* Centruj ikony kropek */
+  }
 }

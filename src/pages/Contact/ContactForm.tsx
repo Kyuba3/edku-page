@@ -54,7 +54,7 @@ const ContactForm = () => {
     <form onSubmit={handleSubmit} className="contact-form">
   <div className="form-row">
     <div className="form-group">
-      <label htmlFor="name">{t('contact.name')}</label>
+      <label htmlFor="name">{t('contact.name')}*</label>
       <input 
         type="text" 
         id="name" 
@@ -71,15 +71,14 @@ const ContactForm = () => {
         id="surname" 
         name="surname" 
         value={formData.surname} 
-        onChange={handleChange} 
-        required  
+        onChange={handleChange}  
       />
     </div>
   </div>
 
   <div className="form-row">
     <div className="form-group">
-      <label htmlFor="email">{t('contact.email')}</label>
+      <label htmlFor="email">{t('contact.email')}*</label>
       <input 
         type="email" 
         id="email" 
@@ -96,8 +95,7 @@ const ContactForm = () => {
         id="phone" 
         name="phone" 
         value={formData.phone} 
-        onChange={handleChange} 
-        required 
+        onChange={handleChange}  
       />
     </div>
   </div>
@@ -118,11 +116,12 @@ const ContactForm = () => {
       type="checkbox" 
       id="consent" 
       name="consent" 
+      required
       checked={formData.consent} 
       onChange={handleConsentChange} 
       className="consent-checkbox"
     />
-    <label htmlFor="consent" className="consent-label">{t('contact.consent')}</label>
+    <label htmlFor="consent" className="consent-label">{t('contact.consent')}*</label>
   </div>
 
   <div className="form-group">

@@ -4,23 +4,29 @@
     "home": "Home",
     "about": "About us",
     "contact": "Contact",
-    "products": "Our products",
+    "products": "Products",
     "blog": "Blog"
   },
 
   "header": {
-    "header": "Choose your own style of traveling"
+    "header": "<p>Choose your </p> own style of<p>traveling</p>",
+    "subheader": "<p>Camper conversions, logistics assistance, kneepads,<br> for you, your company or your loved ones</p>",
+    "products_button": "Our Products",
+    "contact_button": "Contact"
   },
 
   "contact": {
-    "questions": "Do you have any questions? <br>Contact us!",
+    "questions": "Do you have any questions?",
+    "questions2": "Do you want to know more?",
     "name": "Name",
     "surname": "Surname",
     "phone": "Phone number",
     "email": "Email",
-    "message": "Message",
+    "message": "How can we help You?",
     "send_button": "Send",
-    "title": "Contact"
+    "contact_button": "Contact us",
+    "title": "Contact",
+    "consent": "I agree to the processing of personal data"
   },
 
 

@@ -22,6 +22,7 @@ const ArticleDetails: React.FC = () => {
 
   return (
     <div className="article-container">
+      <img src={article.image} className='flex mx-auto'></img>
       <h1 className="title">{article.title}</h1>
       <p className="content">{article.content}</p>
     </div>

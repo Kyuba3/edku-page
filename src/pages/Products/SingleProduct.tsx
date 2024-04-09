@@ -16,7 +16,7 @@ const SingleProduct: React.FC<ProductCardProps> = ({ product }) => {
   }
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white h-50 singleProduct-container" onClick={handleClick}>
+    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white singleProduct-container" onClick={handleClick}>
       <img className="w-full" src={product.image} alt={product.name} />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{product.name}</div>

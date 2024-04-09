@@ -11,6 +11,7 @@ import ArticleDetails from './components/AddArticle/ArticleDetails.tsx';
 import ArticlesList from './pages/Articles/ArticleList/ArticleList.tsx';
 import SearchResults from './components/SearchResults/SearchResults.tsx';
 import ContactPage from './pages/Contact/ContactPage.tsx';
+import ContactCTA from './pages/Contact/ContactCTA.tsx';
 
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
             <Route path='/contact' element={<ContactPage />} />
           </Routes>
         </main>
+        <ContactCTA />
         <Footer />
       </div>
     </ScrollProvider>

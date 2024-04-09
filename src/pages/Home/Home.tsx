@@ -28,7 +28,6 @@ const Home = () => {
       <div ref={sectionRefs.about}><About /></div>
       <ArticlesList limit={3}/>
       {/* <AddArticle /> */}
-      <ContactCTA />
     </div>
   )
 }

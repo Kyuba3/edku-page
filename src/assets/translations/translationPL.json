@@ -4,7 +4,7 @@
     "home": "Strona główna",
     "about": "O nas",
     "contact": "Kontakt",
-    "products": "Nasze Produkty",
+    "products": "Produkty",
     "blog": "Blog",
     "searchPlaceholder": "Czego szukasz?"
   },
@@ -17,13 +17,15 @@
   },
 
   "contact": {
-    "questions": "Masz jakieś pytania? <br>Skontaktuj się z nami",
+    "questions": "Masz pytania?",
+    "questions2": "Chcesz dowiedzieć się więcej?",
     "name": "Imię",
     "surname": "Nazwisko",
     "phone": "Numer telefonu",
     "email": "Email",
     "message": "W czym możemy Ci pomóc?",
     "send_button": "Wyślij",
+    "contact_button": "Skontaktuj się",
     "title": "Kontakt",
     "consent": "Wyrażam zgodę na przetwarzanie danych osobowych"
   },
@@ -40,7 +42,13 @@
     "add_article_button": "Dodaj artykuł",
     "title_placeholder": "Tytuł",
     "content_placeholder": "Treść"
+  },
+
+  "footer": {
+    "privace-policy": "Polityka prywatności",
+    "regulations": "Regulamin",
+    "shipping": "Wysyłka i dostawa",
+    "guaranty": "Warunki gwarancji",
+    "reclamations": "Polityka reklamacji i zwrotów"
   }
-
-
 }

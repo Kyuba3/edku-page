@@ -7,7 +7,7 @@ const ContactCTA = () => {
  
   return (
     <div 
-      className="backgroundImage relative text-white text-start p-10"
+      className="backgroundImage relative text-white text-start p-10 mb-10"
     >
       <div className='text-container'>
         <h2 className="text-6xl font-bold mb-4">{t('contact.questions')}</h2>

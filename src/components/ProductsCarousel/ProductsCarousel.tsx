@@ -12,6 +12,11 @@ interface ProductsCarouselProps {
 const ProductsCarousel: React.FC<ProductsCarouselProps> = ({ products }) => {
   const [visibleStart, setVisibleStart] = useState(0);
   const visibleCount = 4;
+  
+  const truncateDescription = (description: string, maxLength: number) => {
+    if (description.length <= maxLength) return description;
+    return `${description.slice(0, maxLength)}...`;
+  };
 
   const goToNext = () => {
     setVisibleStart((prevStart) =>
@@ -36,7 +41,12 @@ const ProductsCarousel: React.FC<ProductsCarouselProps> = ({ products }) => {
           .concat(products.slice(0, Math.max(visibleStart + visibleCount - products.length, 0)))
           .map((product, index) => (
             <div key={index} className="carousel-item">
-              <SingleProduct product={product} />
+              <SingleProduct 
+                product={{
+                  ...product,
+                  description: truncateDescription(product.description, 80)
+                }} 
+              />
             </div>
           ))
         }

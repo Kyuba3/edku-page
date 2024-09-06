@@ -8,8 +8,6 @@ const Products = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      //const response = await fetch('https://your-api-endpoint/products');
-      //const data: Product[] = await response.json();
       setTimeout(() => {
         setProducts(mockProducts);
       }, 100);

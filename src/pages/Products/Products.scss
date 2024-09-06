@@ -5,3 +5,46 @@
   justify-content: space-between;
   align-items: flex-start;
 }
+
+.single-product-name {
+  color: #f26629;
+}
+
+.single-product-description-header {
+  color: #242b52;
+}
+
+.product-description {
+  color: #242b52;
+}
+
+.product-description::-webkit-scrollbar {
+  width: 8px; /* Węższy scrollbar */
+}
+
+.product-description::-webkit-scrollbar-track {
+  background: transparent; /* Tło tracka */
+}
+
+.single-product-details-price{
+  color: #242b52;
+}
+
+@media (max-width: 768px) {
+
+  .single-product-image-container {
+      max-height: 250px;
+  }
+  
+  .container {
+    padding: 0 1rem; /* Zmniejszenie marginesów po bokach na urządzeniach mobilnych */
+  }
+  
+  .single-product-description-header {
+    font-size: 1.25rem; /* Zmniejszenie rozmiaru nagłówka na mniejszych ekranach */
+  }
+
+  .single-product-details-price {
+    font-size: 1.5rem; /* Zmniejszenie rozmiaru ceny */
+  }
+}

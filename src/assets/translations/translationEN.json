@@ -43,7 +43,13 @@
     "add_article_button": "Add article",
     "title_placeholder": "Title",
     "content_placeholder": "Content"
-  }
+  },
 
-  
+  "footer": {
+    "privace_policy": "Privacy Policy",
+    "regulations": "Regulations",
+    "shipping": "Shipping and delivery",
+    "guaranty": "Warranty conditions",
+    "reclamations": "Complaints and returns policy"
+  }
 }

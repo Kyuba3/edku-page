@@ -46,7 +46,7 @@
   },
 
   "footer": {
-    "privace-policy": "Polityka prywatności",
+    "privace_policy": "Polityka prywatności",
     "regulations": "Regulamin",
     "shipping": "Wysyłka i dostawa",
     "guaranty": "Warunki gwarancji",

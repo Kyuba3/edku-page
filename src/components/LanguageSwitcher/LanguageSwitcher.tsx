@@ -1,29 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import FlagIconFactory from 'react-flag-icon-css';
+import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
 import './LanguageSwitcher.scss';
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+
+const FlagIcon = FlagIconFactory(React, {useCssModules: false});
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
 
-  const changeLanguage = (event: any) => {
-    i18n.changeLanguage(event.target.value);
-  }
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
-  const FlagIcon = FlagIconFactory(React, {useCssModules: false});
+  const changeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+    setIsOpen(false); // Close dropdown after selection
+  };
 
   return (
     <div className="language-switcher">
-      <div className="current-language">
-        <FlagIcon code={i18n.language === 'pl' ? 'pl' : 'gb'} /> <MdOutlineKeyboardArrowDown size="25" color="#242b52" />
+      <div className="current-language" onClick={toggleDropdown}>
+        <FlagIcon code={i18n.language === 'pl' ? 'pl' : 'gb'}/> 
+        <span className="language-text">
+          {i18n.language === 'pl' ? ' Polski' : ' English'}
+        </span>
+        {isOpen ? (
+          <MdOutlineKeyboardArrowUp size="25" color="#242b52" />
+        ) : (
+          <MdOutlineKeyboardArrowDown size="25" color="#242b52" />
+        )}
       </div>
-      <select onChange={changeLanguage} value={i18n.language}>
-        <option value="en">English</option>
-        <option value="pl">Polski</option>
-      </select>
+      {isOpen && (
+        <div className="dropdown-menu">
+          <div className="dropdown-item" onClick={() => changeLanguage('en')}>
+            <FlagIcon code="gb" />
+          </div>
+          <div className="dropdown-item" onClick={() => changeLanguage('pl')}>
+            <FlagIcon code="pl" />
+          </div>
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
 export default LanguageSwitcher;
